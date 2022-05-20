@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/30006a07e8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>My Weather Channel - Project SCPW2</title>
+  </head>
+  <body>
+    <div class="container base-container">
+      <div class="container first-container">
+        <div
+          class="
+            bg-info
+            p-2
+            text-dark
+            bg-opacity-25
+            weather-bcgr1
+            second-container
+          "
+        >
+          <div class="row welcome">
+            <div class="col-8">
+              <h1>Welcome to my weather channel</h1>
+            </div>
+            <div class="col-4">
+              <p class="local-info" id="current-date-time">
+                Saturday, April 9th, 2022 <br />local time 11:45 pm
+              </p>
+            </div>
+          </div>
+          <br />
+
+          <div class="row search-engine">
+            <div class="col-5 search-engine-col">
+              <form id="search-city-form">
+                <label for="city" class="search-engine-label"
+                  >Search city:
+                </label>
+                <input
+                  type="text"
+                  placeholder="ex.: Prague..."
+                  id="search-city"
+                  class="city"
+                  autocomplete="off"
+                  autofocus
+                />
+                <input type="submit" value="Submit" id="submit-button" />
+              </form>
+            </div>
+            <div class="col-6">
+              <span
+                ><button
+                  class="current-location-button"
+                  id="current-location-button"
+                >
+                  Current location
+                </button></span
+              >
+            </div>
+          </div>
+          <br />
+          <div class="row one daily-location-prediction">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+              <div class="col">
+                <div>
+                  <p class="local-extended-info">
+                    <span id="displayed-city">city</span><br />
+                    Saturday <br />
+                    Apr 9th, 2022
+                  </p>
+                </div>
+              </div>
+              <div class="col current-icon-position">
+                <i class="fa-regular fa-sun current-icon"></i>
+              </div>
+              <div class="col local-extended-info" id="current-temperature">
+                <span
+                  class="the-largest-number"
+                  id="current-temperature-displayed"
+                  >19</span
+                ><span class="units"
+                  ><a href="# " id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a></span
+                >
+              </div>
+              <div class="col">
+                <div>
+                  <ul class="local-extended-info">
+                    <li>humidity: <span id="humidity">0</span> %</li>
+                    <li>wind: <span id="windspeed">0</span> m/s</li>
+                    <li>description: <span id="desc"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row welcome weather-images">
+            <div class="col">
+              <i class="fa-solid fa-wind weekly-prediction-picture"></i>
+              <div class="day"><p>Mon</p></div>
+              <div class="daily-info">
+                sunrise: 5:55 AM<br />
+                sunset: 9:15PM <br />
+                temperature: 28°C <br />
+                precipitation: 30% | rain <br />
+                wind: 1 m/s
+              </div>
+            </div>
+            <div class="col">
+              <i
+                class="fa-solid fa-bolt-lightning weekly-prediction-picture"
+              ></i>
+              <div class="day"><p>Tue</p></div>
+              <div class="daily-info">
+                sunrise: 5:55 AM<br />
+                sunset: 9:15PM <br />
+                temperature: 28°C <br />
+                precipitation: 30% | rain <br />
+                wind: 1 m/s
+              </div>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-wind weekly-prediction-picture"></i>
+              <div class="day"><p>Wed</p></div>
+              <div class="daily-info">
+                sunrise: 5:55 AM<br />
+                sunset: 9:15PM <br />
+                temperature: 28°C <br />
+                precipitation: 30% | rain <br />
+                wind: 1 m/s
+              </div>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-meteor weekly-prediction-picture"></i>
+              <div class="day"><p>Sat</p></div>
+              <div class="daily-info">
+                sunrise: 5:55 AM<br />
+                sunset: 9:15PM <br />
+                temperature: 28°C <br />
+                precipitation: 30% | rain <br />
+                wind: 1 m/s
+              </div>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-tornado weekly-prediction-picture"></i>
+              <div class="day"><p>Sunday</p></div>
+              <div class="daily-info">
+                sunrise: 5:55 AM<br />
+                sunset: 9:15PM <br />
+                temperature: 28°C <br />
+                precipitation: 30% | rain <br />
+                wind: 1 m/s
+              </div>
+            </div>
+            <br />
+          </div>
+
+          <div class="shared-photos-gallery">
+            <h3>
+              Share weather indicating photos <br />
+              from your location with us
+              <i class="fa-solid fa-camera"></i>
+            </h3>
+            <form>
+              <div class="upload-photo">
+                <input
+                  type="upload"
+                  placeholder="Upload photo from your computer..."
+                  class="upload-column"
+                  autocomplete="off"
+                  autofocus
+                  id="photoUpload"
+                />
+                <input type="upload" value="Upload" class="upload-button" />
+                <small id="uploadInfo" class="upload-info"
+                  >You'll be redirected to describe your picture and eventualy
+                  link it to your eportfolio.</small
+                >
+              </div>
+            </form>
+
+            <br />
+            <div class="row shared-photos">
+              <div class="col">
+                <img
+                  src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="img-fluid shared-photo-1"
+                  alt="shared-photo"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="img-fluid shared-photo-1"
+                  alt="shared-photo"
+                />
+              </div>
+            </div>
+            <br />
+            <div class="row row shared-photos">
+              <div class="col">
+                <img
+                  src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="img-fluid shared-photo-2"
+                  alt="shared-photo"
+                />
+              </div>
+              <div class="col shared-photos-2">
+                <img
+                  src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="img-fluid shared-photo-2"
+                  alt="shared-photo"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://images.pexels.com/photos/11549984/pexels-photo-11549984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="img-fluid shared-photo-2"
+                  alt="shared-photo"
+                />
+              </div>
+            </div>
+            <div class="photo-gallery">
+              <a href="" class="gallery-link"
+                >Photo gallery <i class="fa-solid fa-arrow-right-to-bracket"></i
+              ></a>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col creator-info">
+              <p class="acknowledgement">
+                This Weather Channel was created by Bee
+                <i class="fa-regular fa-images"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
